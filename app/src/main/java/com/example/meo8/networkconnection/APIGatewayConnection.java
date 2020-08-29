@@ -1,10 +1,13 @@
+//Created by:Swathy Chandran
+// Date:28-08-2020
 package com.example.me08.networkconnection;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
+//Class to handle api gateway communication
+//used to query details for animal fire rsisk statistics
 public class APIGatewayConnection {
     private OkHttpClient client=null;
     private String results;
