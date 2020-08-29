@@ -1,3 +1,5 @@
+//Created by:Swathy Chandran
+// Date:28-08-2020
 package com.example.me08;
 
 import android.os.Bundle;
@@ -11,7 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-
+//welcome page
     public class WelcomeFragment extends Fragment {
 
         String compword = "[]";
