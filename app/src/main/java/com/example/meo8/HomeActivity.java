@@ -29,7 +29,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
-#Launch page
+//Launch page
 public class HomeActivity extends AppCompatActivity {
     NetworkConnection networkConnection = null;
     String compword = "[]";
