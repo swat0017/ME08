@@ -16,7 +16,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
-
+//Main page with navigation drawer and launch page where fragments are selected
 public class MainActivity  extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
@@ -49,6 +49,7 @@ public class MainActivity  extends AppCompatActivity  implements NavigationView.
         }
 
     }
+    //Navigation item on select navigates to the fragment
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Bundle data=new Bundle();
@@ -109,12 +110,6 @@ public class MainActivity  extends AppCompatActivity  implements NavigationView.
         super.onBackPressed();
     }
 
-   /* @Override
+  
 
-   private void replaceFragment(MovieSearch nextFragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        //fragmentTransaction.replace(R.id.content_frame, nextFragment);
-        fragmentTransaction.commit();
-    }*/
 }
