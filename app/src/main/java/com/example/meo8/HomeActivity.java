@@ -21,7 +21,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.example.me08.networkconnection.NetworkConnection;
+import com.example.me08.networkconnection.APIGatewayConnection;
 
 
 import org.json.JSONArray;
@@ -31,7 +31,7 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 //Launch page
 public class HomeActivity extends AppCompatActivity {
-    NetworkConnection networkConnection = null;
+    APIGatewayConnection networkConnection = null;
     String compword = "[]";
     String id = null;
     ListView mName;
