@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context="com.example.assignment.ReportActivity">
+
+
+
+
+    <TextView
+        android:id="@+id/report"
+        android:layout_width="122dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="REPORT"
+        android:textColor="#132BB1"
+        android:textSize="25dp"
+
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="100"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/moviedatePickerstart"
+            android:layout_width="173dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_weight="33"
+            android:background="#ffffff"
+            android:clickable="true"
+            android:hint="Select Start Date" />
+
+        <EditText
+            android:layout_weight="33"
+            android:id="@+id/moviedatePickerend"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="25dp"
+            android:background="#ffffff"
+            android:calendarViewShown="false"
+            android:clickable="true"
+            android:hint="End Date" />
+
+        <Button
+            android:id="@+id/button_pie"
+            android:layout_width="140dp"
+            android:layout_height="62dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_weight="33"
+            android:background="#3F51B5"
+            android:text="Click here to see pie chart"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/piechart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="10dp"
+        android:visibility="gone"
+        android:layout_marginTop="25dp"/>
+
+
+    <LinearLayout
+        android:layout_width="411dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_weight="100"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/yearpick"
+            android:layout_width="wrap_content"
+            android:layout_height="23dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="25dp"
+            android:layout_weight="50"
+            android:background="#ffffff"
+            android:clickable="true"
+            android:hint="Select Year" />
+
+
+        <Button
+            android:id="@+i

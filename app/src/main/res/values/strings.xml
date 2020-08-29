@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Australian Natural Hazards</string>
+
+
+    <string-array name="states_array">
+        <item>VIC</item>
+        <item>ACT</item>
+        <item>SA</item>
+        <item>WA</item>
+        <item>TAS</item>
+        <item>NSW</item>
+        <item>QLD</item>
+        <item>NT</item>
+    </string-array>
+    <string-array name="year">
+        <item>2015</item>
+        <item>2016</item>
+        <item>2017</item>
+        <item>2018</item>
+        <item>2019</item>
+        <item>2020</item>
+
+    </string-array>
+
+
+
+<string name="facebook_app_id">293953665329644</string>
+    <string name="facebook_login_protocol_scheme">fb293953665329644</string>
+</resources>

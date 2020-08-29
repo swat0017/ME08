@@ -1,0 +1,90 @@
+package com.example.assignment;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.text.InputType;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.assignment.networkconnection.NetworkConnection;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
+
+public class ReportActivity extends AppCompatActivity implements View.OnClickListener {
+    NetworkConnection networkConnection = null;
+    String compword="[]";
+    String id=null;
+    private Calendar calendar;
+private Button mbuttonpiechart;
+    private int year, month, day;
+    private EditText mStartDate;
+    private EditText mEndDate;
+    private DatePickerDialog fromDatePickerDialog;
+    private DatePickerDialog toDatePickerDialog;
+    private SimpleDateFormat dateFormatter;
+    String startdate=null;
+    String enddate=null;
+    @Override
+
+    protected void onCreate(Bundle savedInstanceState) {
+        networkConnection=new NetworkConnection();
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_report);
+        mStartDate= (EditText) findViewById(R.id.moviedatePickerstart);
+        mStartDate.setInputType(InputType.TYPE_NULL);
+        mStartDate.requestFocus();
+        mEndDate= (EditText) findViewById(R.id.moviedatePickerend);
+        mEndDate.setInputType(InputType.TYPE_NULL);
+        String name = getIntent().getStringExtra("username");
+        id = getIntent().getStringExtra("id");
+        dateFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
+        boolean val=setDateTimeField();
+        mbuttonpiechart=(Button) findViewById(R.id.butt)
+        if(val){
+            MoviesPerSuburb getMovies=new MoviesPerSuburb();
+            getMovies.execute(id,startdate,enddate);
+        }
+
+
+    }
+    private boolean setDateTimeField() {
+        mStartDate.setOnClickListener(this);
+        mEndDate.setOnClickListener(this);
+
+        Calendar newCalendar = Calendar.getInstance();
+        fromDatePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                Calendar newDate = Calendar.getInstance();
+                newDate.set(year, monthOfYear, dayOfMonth);
+                mStartDate.setText(dateFormatter.format(newDate.getTime()));
+                startdate=mStartDate.getText().toString().trim()+"T00:00:00";
+            }
+
+        }, newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
+
+        toDatePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
+
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                Calendar newDate = Calendar.getInstance();
+                newDate.set(year, monthOfYear, dayOfMonth);
+                mEndDate.setText(dateFormatter.format(newDate.getTime()));
+                enddate=mEndDate.getText().toString().trim()+"T00:00:00";
+
+            }
+        }
+
+                , newCalendar.get(Calendar.YEAR), newCalendar.get(Calendar.MONTH), newCalendar.get(Calendar.DAY_OF_MONTH));
+  
