@@ -11,7 +11,7 @@
 
     android:scrollbarSize="10dp"
 
-    tools:context="com.example.me08.ReptileFragment">
+    tools:context="com.example.me08.InformationFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -23,39 +23,32 @@
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_marginTop="10dp"
-
-            app:srcCompat="@drawable/reptile" />
+            android:background="#FDFBE9"
+            app:srcCompat="@drawable/icon5" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-
+            android:layout_height="39dp"
+            android:background="#009688"
             android:gravity="center"
-            android:text="Number of Reptiles identified at Risk"
+            android:textColor="#F4FAF9"
+            android:text="Further Information"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/further"
+            android:layout_width="match_parent"
+            android:layout_height="513dp"
+            android:background="#F4ECB7"
+
+
             android:textSize="20dp" />
 
 
-        <com.github.mikephil.charting.charts.PieChart
-            android:id="@+id/piechart"
-            android:layout_width="270dp"
-            android:layout_height="270dp"
 
-            android:layout_marginLeft="70dp"
-            android:visibility="gone"
-            android:layout_marginTop="10dp"/>
-
-
-        <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/barchartsec"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="40dp"
-            android:visibility="gone"
-            android:layout_marginTop="15dp"/>
 
     </LinearLayout>
 
