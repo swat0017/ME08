@@ -1,9 +1,9 @@
-//Created by:Swathy Chandran
-// Date:28-08-2020
 package com.example.me08;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -16,7 +16,9 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
-//Main page with navigation drawer and launch page where fragments are selected
+
+import java.text.SimpleDateFormat;
+
 public class MainActivity  extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
@@ -33,8 +35,15 @@ public class MainActivity  extends AppCompatActivity  implements NavigationView.
         setSupportActionBar(toolbar);
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nv);
+        View header=navigationView.getHeaderView(0);
+        TextView txtdate=(TextView)header.findViewById(R.id.nav_date);
+        long date=System.currentTimeMillis();
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
+        String currentdate=sdf.format(date);
 
+        txtdate.setText(currentdate);
         navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setItemIconTintList(null);
         toggle = new ActionBarDrawerToggle(this,
                 drawerLayout,toolbar,R.string.Open,R.string.Close);
         drawerLayout.addDrawerListener(toggle);
@@ -44,12 +53,11 @@ public class MainActivity  extends AppCompatActivity  implements NavigationView.
             WelcomeFragment homeActivity=new WelcomeFragment();
 
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new WelcomeFragment()).commit();
+                    new WelcomeFragment()).addToBackStack(null).commit();
 
         }
 
     }
-    //Navigation item on select navigates to the fragment
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Bundle data=new Bundle();
@@ -60,27 +68,21 @@ public class MainActivity  extends AppCompatActivity  implements NavigationView.
         data.putString("id",id);
         //Navigation to various fragments
         switch (item.getItemId()) {
-            case R.id.species:
-                //Fire species Fragment
-                ReportFragment reportFragment=new ReportFragment();
-                reportFragment.setArguments(data);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ReportFragment()).commit();
-                break;
 
-          /*  case R.id.moviememoir:
+
+            case R.id.start:
                 //list of movies in memoir
-                MemoirFragment memoirFragment=new MemoirFragment();
+                WelcomeFragment memoirFragment=new WelcomeFragment();
                 memoirFragment.setArguments(data);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new MemoirFragment()).commit();
-                break;
-            case R.id.watchlist:
+                        new WelcomeFragment()).addToBackStack(null).commit();
+
+           /* case R.id.info:
                 //watchlist fragment
-                WatchlistFragment watchlistFragment=new WatchlistFragment();
+                InformationFragment watchlistFragment=new InformationFragment();
                 watchlistFragment.setArguments(data);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new WatchlistFragment()).commit();
+                        new InformationFragment()).addToBackStack(null).commit();
                 break;
             case R.id.report:
                 //report fragment
@@ -110,6 +112,5 @@ public class MainActivity  extends AppCompatActivity  implements NavigationView.
         super.onBackPressed();
     }
 
-  
 
 }

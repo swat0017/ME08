@@ -21,7 +21,8 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FishFragment extends Fragment { private Button mbuttonpiechart;
+public class SpiderFragment  extends Fragment {
+    private Button mbuttonpiechart;
     private Button mbuttonbarchart;
     private int year, month, day;
     private PieChart mPieChart;
@@ -34,26 +35,26 @@ public class FishFragment extends Fragment { private Button mbuttonpiechart;
     List<Integer> count=new ArrayList<Integer>();
     List<Integer> totalcount=new ArrayList<Integer>();
     APIGatewayConnection networkConnection=null;
-    public FishFragment() {
+    public SpiderFragment() {
     }
 
     public void onCreate(Bundle savedInstanceState){super.onCreate(savedInstanceState);}
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fish_layout, container, false);
+        View view = inflater.inflate(R.layout.spider_layout, container, false);
         mPieChart=(PieChart) view.findViewById(R.id.piechart);
         mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
         networkConnection=new APIGatewayConnection();
-        FishInfo info=new FishInfo();
+        SpiderInfo info=new SpiderInfo();
         info.execute();
         return  view;
     }
-    private class FishInfo extends AsyncTask<String, Void, String> {
+    private class SpiderInfo extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             Log.i("json ", "debugging");
 
-            return (networkConnection.getFishByCategory());
+            return (networkConnection.getSpiderByCategory());
 
         }
 

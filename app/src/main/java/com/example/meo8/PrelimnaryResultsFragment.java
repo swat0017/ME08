@@ -6,7 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -16,44 +16,33 @@ import com.example.me08.networkconnection.APIGatewayConnection;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 
+import org.json.JSONArray;
 import org.json.JSONException;
+import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class FishFragment extends Fragment { private Button mbuttonpiechart;
-    private Button mbuttonbarchart;
-    private int year, month, day;
-    private PieChart mPieChart;
-    private BarChart mBarChart;
+public class PrelimnaryResultsFragment extends Fragment {
     String compword="[]";
-    String id=null;
-    int sum=0;
-    List<String> animalCategorys=new ArrayList<String>();
-    ArrayList<String> months=new ArrayList<String>();
-    List<Integer> count=new ArrayList<Integer>();
-    List<Integer> totalcount=new ArrayList<Integer>();
-    APIGatewayConnection networkConnection=null;
-    public FishFragment() {
+    View view =null;
+            APIGatewayConnection networkConnection=null;
+    public PrelimnaryResultsFragment() {
     }
 
     public void onCreate(Bundle savedInstanceState){super.onCreate(savedInstanceState);}
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fish_layout, container, false);
-        mPieChart=(PieChart) view.findViewById(R.id.piechart);
-        mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
+         view = inflater.inflate(R.layout.results_layout, container, false);
+
         networkConnection=new APIGatewayConnection();
-        FishInfo info=new FishInfo();
+        ResultsInfo info=new ResultsInfo();
         info.execute();
         return  view;
     }
-    private class FishInfo extends AsyncTask<String, Void, String> {
+    private class ResultsInfo extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             Log.i("json ", "debugging");
 
-            return (networkConnection.getFishByCategory());
+            return (networkConnection.getResult());
 
         }
 
@@ -62,14 +51,24 @@ public class FishFragment extends Fragment { private Button mbuttonpiechart;
             if (result.equalsIgnoreCase(compword)) {
                 Toast.makeText(getActivity().getApplicationContext(), "No info", Toast.LENGTH_LONG).show();
             } else {
+                JSONObject object = null;
+
                 try {
-                    Charts.loadintopiechart(result,mPieChart,mBarChart);
+                    object = new JSONObject(result.toString());
+                    JSONArray jsonArray = object.getJSONArray("body");
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject obj = jsonArray.getJSONObject(i);
+                        result = obj.getString("PreliminaryResults");
+                        TextView text = view.findViewById(R.id.findings);
+                        Log.i("result",result);
+                        text.setText(result);
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
+
+
             }
         }
-
-
-    }
-}
+    }}

@@ -1,5 +1,3 @@
-//Created by:Swathy Chandran
-// Date:28-08-2020
 package com.example.me08;
 
 import android.os.Bundle;
@@ -11,24 +9,20 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
-//welcome page
+
     public class WelcomeFragment extends Fragment {
 
-        String compword = "[]";
-        String id = null;
-        ListView mName;
-        ListView rdate;
-        ListView rat;
-        TextView dateview;
-        TextView textView;
+
 
 
         ArrayAdapter<String> arrayAdapter;
         ArrayAdapter<String> arrayAdapter2;
         ArrayAdapter<String> arrayAdapter3;
-
+        CardView speciescard;
+        CardView furthercard;
         public WelcomeFragment() {
         }
 
@@ -39,6 +33,22 @@ import androidx.fragment.app.Fragment;
 
 
             View view = inflater.inflate(R.layout.activity_welcome, container, false);
+            speciescard=(CardView)view.findViewById(R.id.species);
+            speciescard.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ReportFragment mammalFragment=new ReportFragment();
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            new ReportFragment()).addToBackStack(null).commit();
+                }});
+             furthercard = (CardView)view.findViewById(R.id.infocard);
+            furthercard.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    InformationFragment mammalFragment=new InformationFragment();
+                    getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            new InformationFragment()).addToBackStack(null).commit();
+                }});
             return view;
 
         }}

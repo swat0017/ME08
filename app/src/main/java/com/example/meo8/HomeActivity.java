@@ -1,6 +1,6 @@
+package com.example.me08;
 //Created by:Swathy Chandran
 // Date:28-08-2020
-package com.example.me08;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +29,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
-//Launch page
+
 public class HomeActivity extends AppCompatActivity {
     APIGatewayConnection networkConnection = null;
     String compword = "[]";
