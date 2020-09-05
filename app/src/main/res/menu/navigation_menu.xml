@@ -6,22 +6,25 @@
     tools:showIn="navigation_view">
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/species"
-            android:title="Species-Risk Analysis" />
+
+            android:id="@+id/start"
+            android:title="Welcome Page" />
         <item
-            android:id="@+id/mortality"
-            android:title="Post Fire-Mortality Analysis" />
-        <item
+            android:icon="@mipmap/building"
         android:id="@+id/org"
         android:title="Organisations" />
         <item
+            android:icon="@mipmap/nearme"
             android:id="@+id/near"
             android:title="Near Me " />
 
         <item
+            android:icon="@drawable/icon6"
             android:id="@+id/donation"
             android:title="Donation Options" />
         <item
+
+            android:icon="@drawable/icon5"
             android:id="@+id/info"
             android:title="Information" />
 

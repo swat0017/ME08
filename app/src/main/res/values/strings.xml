@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Australian Natural Hazards</string>
+    <string name="app_name">WildAid</string>
 
 
     <string-array name="states_array">
@@ -22,13 +22,14 @@
 
     </string-array>
 
- <string name="Open">open</string>
+
+    <string name="Open">open</string>
     <string name="Close">close</string>
     <string name="title_activity_maps">Map</string>
     <string name="submit">Submit</string>
     <string name="addcinema">Add new Cinema</string>
     <string name="Cinemaname">Cinema Name</string>
     <string name="Cinemalocation">Location</string>
-
-
+<string name="facebook_app_id">293953665329644</string>
+    <string name="facebook_login_protocol_scheme">fb293953665329644</string>
 </resources>

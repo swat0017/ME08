@@ -115,7 +115,7 @@
 
                 <ImageView
                     android:layout_width="146dp"
-                    android:layout_height="63dp"
+                    android:layout_height="78dp"
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/info2" />
 
@@ -123,7 +123,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="80dp"
                     android:gravity="center_horizontal"
-                    android:text="Further Info"
+                    android:text="Category Analysis"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
