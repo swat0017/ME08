@@ -15,8 +15,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_weight="100"
+
         android:orientation="vertical">
 
 
@@ -24,7 +23,6 @@
             android:id="@+id/imageView2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
 
             app:srcCompat="@drawable/reptile" />
 
@@ -40,22 +38,15 @@
 
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/piechart"
-            android:layout_width="270dp"
-            android:layout_height="270dp"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
 
             android:layout_marginLeft="70dp"
             android:visibility="gone"
-            android:layout_marginTop="10dp"/>
+          />
 
 
-        <com.github.mikephil.charting.charts.BarChart
-            android:id="@+id/barchartsec"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginLeft="40dp"
-            android:visibility="gone"
-            android:layout_marginTop="15dp"/>
+
 
     </LinearLayout>
 

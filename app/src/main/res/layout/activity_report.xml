@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     android:orientation="vertical"
     android:fillViewport="true"
     android:gravity="center_horizontal">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="10dp"
 
-        android:background="#009688"
-        android:orientation="vertical">
 
         <TextView
             android:layout_width="match_parent"
@@ -22,320 +17,28 @@
             android:gravity="center"
             android:text="Species-Risk Analysis"
             android:textAlignment="center"
-            android:textColor="#FAF8F8"
+            android:textColor="#009688"
+            android:textStyle="bold"
             android:textSize="18dp" />
 
 
-    <LinearLayout
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpage"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="520dp"
+        android:background="#F5FAF9" />
 
-        android:layout_weight="100"
-        android:background="#F8EC8D"
-        android:orientation="horizontal">
+    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+        android:id="@+id/dots"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
 
+        app:dotsSize="15dp"
+        app:dotsSpacing="5dp"
+        app:dotsColor="#009688"
+        app:selectedDotColor="#009688" />
+    </LinearLayout>
 
 
-        <LinearLayout
-            android:layout_width="197dp"
-            android:layout_height="529dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="25dp"
 
-            android:orientation="vertical">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="179dp"
-                android:layout_height="113dp"
-                android:id="@+id/mammal_card"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="16dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="58dp"
-                        android:layout_gravity="center_horizontal"
-                        android:src="@drawable/download1" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="42dp"
-                        android:gravity="center_horizontal"
-                        android:text="Mammals"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="180dp"
-                android:layout_height="113dp"
-                android:id="@+id/fish_card"
-                android:layout_marginBottom="16dp"
-
-
-                app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="16dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="61dp"
-                        android:layout_gravity="center_horizontal"
-                        android:src="@drawable/download4" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="Fish"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="182dp"
-                android:layout_height="113dp"
-                android:id="@+id/bird_card"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="16dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="144dp"
-                        android:layout_height="59dp"
-                        android:layout_gravity="center_horizontal"
-                        android:src="@drawable/download5" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="Birds"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp"
-                        />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="179dp"
-                android:layout_height="113dp"
-                android:id="@+id/spider_card"
-                android:layout_marginBottom="16dp"
-
-                app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="16dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="142dp"
-                        android:layout_height="59dp"
-                        android:layout_gravity="center_horizontal"
-                        android:src="@drawable/spider" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:gravity="center_horizontal"
-                        android:text="Spiders"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="197dp"
-            android:layout_height="529dp"
-
-            android:layout_marginTop="25dp"
-
-            android:orientation="vertical">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="176dp"
-                android:layout_height="113dp"
-                android:id="@+id/reptile_card"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="16dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="135dp"
-                        android:layout_height="57dp"
-                        android:layout_gravity="center_horizontal"
-                        android:src="@drawable/reptile" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="42dp"
-                        android:gravity="center_horizontal"
-                        android:text="Reptiles"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="178dp"
-                android:layout_height="113dp"
-                android:id="@+id/insect_card"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="16dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="150dp"
-                        android:layout_height="59dp"
-                        android:layout_gravity="center_horizontal"
-                        android:src="@drawable/insect" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="Insects"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="180dp"
-                android:layout_height="113dp"
-                android:id="@+id/frog_card"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="16dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="59dp"
-                        android:layout_gravity="center_horizontal"
-                        android:src="@drawable/frog" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="Frogs"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="181dp"
-                android:layout_height="113dp"
-                android:id="@+id/info_card"
-                android:layout_marginBottom="16dp"
-                app:cardCornerRadius="16dp"
-                app:cardElevation="8dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_margin="16dp"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="118dp"
-                        android:layout_height="57dp"
-                        android:layout_gravity="center_horizontal"
-
-                        android:src="@drawable/findings" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="Findings"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/black"
-                        android:textSize="18sp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-
-        </LinearLayout>
-
-    </LinearLayout></LinearLayout>
-
-</ScrollView>

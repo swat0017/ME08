@@ -16,6 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_weight="100"
         android:orientation="vertical">
 
@@ -41,14 +43,57 @@ android:background="#F8EC8D"
         <TextView
             android:id="@+id/findings"
             android:layout_width="match_parent"
-            android:layout_height="513dp"
-android:background="#F8EC8D"
-
-
+            android:layout_height="74dp"
+            android:background="#F8EC8D"
+            android:text="The results are indicative only, and are just the first step in understanding the potential impacts of the bushfires. Preliminary results indicate that:"
 
             android:textSize="15dp" />
 
+        <TextView
+            android:id="@+id/findings1"
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:background="#F8EC8D"
+            android:text=" 1. 49 listed threatened species have more than 80% of their modelled likely or known distribution within the fire extent"
 
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/findings2"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:background="#F8EC8D"
+            android:text=" 2. A further 65 listed threatened species have more than 50%, but less than 80%, of their modelled likely or known distribution within the fire extent"
+
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/findings3"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="#F8EC8D"
+            android:text=" 3. A further 77 listed threatened species have more than 30%, but less than 50%, of their modelled likely or known distribution within the fire extent "
+
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/findings4"
+            android:layout_width="match_parent"
+            android:layout_height="87dp"
+            android:background="#F8EC8D"
+            android:text=" 4. A further 136 listed threatened species and 4 listed migratory species have more than 10%, but less than 30%, of their modelled likely or known distribution within the fire extent."
+
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/findings5"
+            android:layout_width="match_parent"
+            android:layout_height="126dp"
+            android:layout_marginBottom="11dp"
+            android:background="#F8EC8D"
+            android:text="5. Please note: 5 species which are listed as migratory (of which 1 is also listed as threatened) have more than 10%, but less than 30%, of their modelled likely or known distribution in Australia within the fire extent. Their range outside of Australia has not been included in this analysis.  \n\n"
+
+            android:textSize="15dp" />
 
 
     </LinearLayout>
