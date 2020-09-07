@@ -42,7 +42,7 @@ public class FrogFragment extends Fragment { private Button mbuttonpiechart;
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.frog_layout, container, false);
         mPieChart=(PieChart) view.findViewById(R.id.piechart);
-        mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
+      //  mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
         networkConnection=new APIGatewayConnection();
         FrogInfo info=new FrogInfo();
         info.execute();
@@ -63,7 +63,7 @@ public class FrogFragment extends Fragment { private Button mbuttonpiechart;
                 Toast.makeText(getActivity().getApplicationContext(), "No info", Toast.LENGTH_LONG).show();
             } else {
                 try {
-                    Charts.loadintopiechart(result,mPieChart,mBarChart);
+                    Charts.loadintopiechart(result,mPieChart);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

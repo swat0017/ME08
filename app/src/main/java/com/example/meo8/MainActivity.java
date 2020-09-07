@@ -61,11 +61,7 @@ public class MainActivity  extends AppCompatActivity  implements NavigationView.
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         Bundle data=new Bundle();
-        String username =getIntent().getStringExtra("username");
 
-        String id =getIntent().getStringExtra("id");
-        data.putString("username",username);
-        data.putString("id",id);
         //Navigation to various fragments
         switch (item.getItemId()) {
 
@@ -77,13 +73,13 @@ public class MainActivity  extends AppCompatActivity  implements NavigationView.
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new WelcomeFragment()).addToBackStack(null).commit();
 
-           /* case R.id.info:
+           case R.id.prelims:
                 //watchlist fragment
-                InformationFragment watchlistFragment=new InformationFragment();
+                PrelimnaryResultsFragment watchlistFragment=new PrelimnaryResultsFragment();
                 watchlistFragment.setArguments(data);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new InformationFragment()).addToBackStack(null).commit();
-                break;
+                        new PrelimnaryResultsFragment()).addToBackStack(null).commit();
+          /*      break;
             case R.id.report:
                 //report fragment
                 ReportFragment fragmentr=new ReportFragment();

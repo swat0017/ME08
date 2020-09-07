@@ -156,5 +156,54 @@ public class APIGatewayConnection {
         }
         return results;
     }
+    public String getVulnerableResult() {
+        final String methodPath = "/vulnerable";
+        System.out.println(methodPath);
+        Request.Builder builder = new Request.Builder();
+        builder.url(BASE_URL + methodPath);
+        Request request = builder.build();
+        try {
+            Response response = client.newCall(request).execute();
+            results = response.body().string();
+
+            System.out.println(results);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return results;
+    }
+    public String getCriticalResult() {
+        final String methodPath = "/critical";
+        System.out.println(methodPath);
+        Request.Builder builder = new Request.Builder();
+        builder.url(BASE_URL + methodPath);
+        Request request = builder.build();
+        try {
+            Response response = client.newCall(request).execute();
+            results = response.body().string();
+
+            System.out.println(results);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return results;
+    }
+    public String getEndangeredResult() {
+        final String methodPath = "/endangered";
+        System.out.println(methodPath);
+        Request.Builder builder = new Request.Builder();
+        builder.url(BASE_URL + methodPath);
+        Request request = builder.build();
+        try {
+            Response response = client.newCall(request).execute();
+            results = response.body().string();
+
+            System.out.println(results);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return results;
+    }
+
 
 }
