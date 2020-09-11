@@ -4,10 +4,12 @@ This is the code repository for Monash students team Me08 that is developing an 
 the risks caused to animals by bushfire and the the ways in which people who want to volunteer and contribute can help them.
 The architecture used is MYSQL database stored in AWS RDS instance,queried using lambda functions and API gateway 
 Android Studio is used for developing the application
+
+
 To run the application,you can either 
 1.Download the apk file situated in the apk folder and run it in your android phone 
 2.Use an emulator like appetize.io
-2.Or pull the code to your local environment and import it in Android studio and run the app to test the application
+3.Or pull the code to your local environment and import it in Android studio and run the app to test the application using android emulator
 
 Tech stack used-
 
