@@ -15,9 +15,13 @@ Java is the main language used in developing our application.The application int
 AWS RDS instance Steps--Log in to AWS console->Services->Search for RDS->Create Database->Choose options Standard create,Mysql,Free tier,set DB name and password,Default VPC and default settings.Once the RDS instance is created,you can connect to the instance from your local system using MYSQL workbench
 
 Database details-
+
 Aws rds endpoint- mydatabase-1.cj1vq2k4dclz.us-east-1.rds.amazonaws.com
+
 Name-mydatabase
+
 Username-admin
+
 Password-monash_1234
 
 
