@@ -35,3 +35,40 @@ This URL is integrated in the java side app->src->main->java->com->example->me08
 All methods accessing AWS api gateway are written here with base url as https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/
 
 
+List of APIs used
+
+Animal analysis
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/bird/
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/fish/
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/frog/
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/insect/
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/mammal/
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/reptile/
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/spider/
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/total/
+
+Organisation info
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/vic
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/sa
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/nsw/
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/wa/
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/qld/
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/allorganisations/
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/act/
+
+https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/nt/
