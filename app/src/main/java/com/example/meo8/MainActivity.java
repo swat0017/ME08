@@ -50,10 +50,10 @@ public class MainActivity  extends AppCompatActivity  implements NavigationView.
         toggle.syncState();
         if (savedInstanceState == null) {
 
-            WelcomeFragment homeActivity=new WelcomeFragment();
+            com.example.me08.WelcomeFragment homeActivity=new com.example.me08.WelcomeFragment();
 
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new WelcomeFragment()).addToBackStack(null).commit();
+                    new com.example.me08.WelcomeFragment()).addToBackStack(null).commit();
 
         }
 
@@ -68,17 +68,17 @@ public class MainActivity  extends AppCompatActivity  implements NavigationView.
 
             case R.id.start:
                 //list of movies in memoir
-                WelcomeFragment memoirFragment=new WelcomeFragment();
+                com.example.me08.WelcomeFragment memoirFragment=new com.example.me08.WelcomeFragment();
                 memoirFragment.setArguments(data);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new WelcomeFragment()).addToBackStack(null).commit();
+                int commit = getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new com.example.me08.WelcomeFragment()).addToBackStack(null).commit();
 
-           case R.id.prelims:
+            case R.id.prelims:
                 //watchlist fragment
-                PrelimnaryResultsFragment watchlistFragment=new PrelimnaryResultsFragment();
+                com.example.me08.PrelimnaryResultsFragment watchlistFragment=new com.example.me08.PrelimnaryResultsFragment();
                 watchlistFragment.setArguments(data);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new PrelimnaryResultsFragment()).addToBackStack(null).commit();
+                        new com.example.me08.PrelimnaryResultsFragment()).addToBackStack(null).commit();
           /*      break;
             case R.id.report:
                 //report fragment

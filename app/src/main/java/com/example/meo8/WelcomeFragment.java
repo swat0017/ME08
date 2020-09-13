@@ -37,17 +37,17 @@ import androidx.fragment.app.Fragment;
             speciescard.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    ReportFragment mammalFragment=new ReportFragment();
+                    com.example.me08.ReportFragment mammalFragment=new com.example.me08.ReportFragment();
                     getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            new ReportFragment()).addToBackStack(null).commit();
+                            new com.example.me08.ReportFragment()).addToBackStack(null).commit();
                 }});
              furthercard = (CardView)view.findViewById(R.id.infocard);
             furthercard.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    InformationFragment mammalFragment=new InformationFragment();
+                    com.example.me08.InformationFragment mammalFragment=new com.example.me08.InformationFragment();
                     getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            new InformationFragment()).addToBackStack(null).commit();
+                            new com.example.me08.InformationFragment()).addToBackStack(null).commit();
                 }});
             return view;
 

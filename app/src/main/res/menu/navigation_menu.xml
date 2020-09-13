@@ -10,24 +10,10 @@
             android:id="@+id/start"
             android:title="Welcome Page" />
         <item
-            android:icon="@mipmap/building"
-        android:id="@+id/org"
-        android:title="Organisations" />
-        <item
-            android:icon="@mipmap/nearme"
-            android:id="@+id/near"
-            android:title="Near Me " />
 
-        <item
-            android:icon="@drawable/icon6"
-            android:id="@+id/donation"
-            android:title="Donation Options" />
-        <item
+            android:id="@+id/prelims"
+            android:title="Preliminary Findings" />
 
-            android:icon="@drawable/icon5"
-            android:id="@+id/info"
-            android:title="Information" />
-
-   </group>
+    </group>
 
 </app:menu>
