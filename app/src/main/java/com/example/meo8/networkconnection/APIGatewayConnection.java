@@ -204,6 +204,22 @@ public class APIGatewayConnection {
         }
         return results;
     }
+    public String getAllOrganisationList() {
+        final String methodPath = "/organisationlist/allorganisations";
+        System.out.println(methodPath);
+        Request.Builder builder = new Request.Builder();
+        builder.url(BASE_URL + methodPath);
+        Request request = builder.build();
+        try {
+            Response response = client.newCall(request).execute();
+            results = response.body().string();
 
+            System.out.println(results);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return results;
+    
+    }
 
 }
