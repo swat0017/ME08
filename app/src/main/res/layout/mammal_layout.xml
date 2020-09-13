@@ -25,7 +25,7 @@
             android:layout_height="145dp"
 
 
-            app:srcCompat="@drawable/download1" />
+            app:srcCompat="@drawable/mammal" />
 
         <TextView
             android:id="@+id/textView2"
