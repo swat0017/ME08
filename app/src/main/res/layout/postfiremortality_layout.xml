@@ -70,6 +70,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="* Pre fire mortality score denotes the risk of mortality for a category of animal before the bushfire season. Post fore mortality score indicates the risk of mortality for category of animal after bushfire season."/>
+            android:text="* Pre fire mortality score denotes the risk of mortality for a category of animal before the bushfire season. Post fore mortality score indicates the risk of mortality for category of animal after bushfire season."
     </LinearLayout>
 </LinearLayout>
