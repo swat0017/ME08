@@ -32,8 +32,9 @@
         android:id="@+id/dots"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-
+        android:gravity="center"
+        android:layout_marginLeft="60dp"
+android:layout_centerHorizontal="true"
         app:dotsSize="15dp"
         app:dotsSpacing="5dp"
         app:dotsColor="#009688"

@@ -1,51 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="126dp"
-    android:layout_height="127dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imageView_org"
+        android:id="@+id/imageViewOrg"
         android:focusable="false"
-        android:clickable="false"
         android:descendantFocusability="blocksDescendants"
+        android:clickable="false"
         android:layout_width="126dp"
         android:layout_height="127dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="5dp" />
 
     <LinearLayout
-        android:layout_width="289dp"
-        android:layout_height="122dp"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
 
         <TextView
             android:id="@+id/orgname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_width="237dp"
+            android:layout_height="80dp"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="50"
+            android:layout_marginTop="10dp"
             android:clickable="false"
             android:descendantFocusability="blocksDescendants"
             android:focusable="false"
-            android:gravity="center"
-            android:textAlignment="center" />
+
+            android:textColor="#009688"
+            android:textSize="15sp" />
 
         <Button
-            android:id="@+id/viewmoreorg_button"
-            android:layout_width="11dp"
-            android:layout_height="20dp"
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:descendantFocusability="blocksDescendants"
+            android:focusable="false"
+
+            android:textColor="#FCFDFD"
             android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="50"
+            android:background="@drawable/roundbutton"
             android:text="View" />
+
+
     </LinearLayout>
-
-
 </LinearLayout>
+
 
