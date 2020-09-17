@@ -34,7 +34,8 @@ Once the API is deployed successfully you can access the resource from outside t
 This URL is integrated in the java side app->src->main->java->com->example->me08->networkconnection->APIGatewayConnection.java
 All methods accessing AWS api gateway are written here with base url as https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/
 
-
+Images are stored in S3 Bucket and the URL is saved in database tables which is accessed via the API gateway
+All the images are taken from pixabay free license
 List of APIs used
 
 Animal analysis
