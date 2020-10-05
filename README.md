@@ -20,11 +20,6 @@ Aws rds endpoint- mydatabase-1.cj1vq2k4dclz.us-east-1.rds.amazonaws.com
 
 Name-mydatabase
 
-Username-admin
-
-Password-monash_1234
-
-
 Steps-Log in to AWS console->Services->Search for Lambda->Create function->function name,choose python script->upload python script zip file->Test lambda
 For each individual query a seperate lambda function is created and API gateway is integrated to a lambda function for API access from outside
 
@@ -36,40 +31,5 @@ All methods accessing AWS api gateway are written here with base url as https://
 
 Images are stored in S3 Bucket and the URL is saved in database tables which is accessed via the API gateway
 All the images are taken from pixabay free license
-List of APIs used
 
-Animal analysis
 
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/bird/
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/fish/
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/frog/
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/insect/
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/mammal/
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/reptile/
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/spider/
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/total/
-
-Organisation info
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/vic
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/sa
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/nsw/
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/wa/
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/qld/
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/allorganisations/
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/act/
-
-https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/organisationlist/nt/
