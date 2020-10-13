@@ -29,6 +29,57 @@ import java.util.List;
 public class Charts {
 
 
+    public static void loadintoBarchart(String json, BarChart mBarChart) throws JSONException {
+
+
+        JSONObject object=new JSONObject(json.toString());
+        JSONArray jsonArray = object.getJSONArray("body");
+
+        ArrayList<BarEntry> barentries = new ArrayList<>();
+ final String[] CATEGORY={"Frog","Mammal","Bird","Reptile","Insect","Spider","Fish",""};
+int counter=0;
+
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject obj = jsonArray.getJSONObject(i);
+             int intcategory=getSpecies(obj.getString("animalCategory"));
+            counter++;
+            int countbar = Integer.parseInt(obj.optString("count"));
+            barentries.add(new BarEntry( intcategory, countbar));
+        }
+        BarDataSet bardataset = new BarDataSet(barentries, "Category Risk");
+        bardataset.setColors(ColorTemplate.COLORFUL_COLORS);
+        BarData bardata = new BarData(bardataset);
+        bardata.setBarWidth(0.9f);
+        mBarChart.setVisibility(View.VISIBLE);
+        mBarChart.animateY(3000);
+        mBarChart.setData(bardata);
+        XAxis xaxis = mBarChart.getXAxis();
+        xaxis.setPosition(XAxis.XAxisPosition.TOP);
+
+        xaxis.setDrawGridLines(false);
+        xaxis.setGranularity(1f);
+       xaxis.setValueFormatter(new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return CATEGORY[(int) value];
+            }
+        });
+      mBarChart.setFitBars(true);
+        YAxis yAxis = mBarChart.getAxisLeft();
+        yAxis.setLabelCount(counter, false);
+        yAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
+        yAxis.setSpaceTop(15f);
+
+        yAxis.setAxisMinimum(0f);
+        Description descr = new Description();
+        descr.setPosition(-30, -10);
+        descr.setText("Category Risk of mammals");
+        mBarChart.setDescription(descr);
+
+        mBarChart.invalidate();
+
+
+    }
     public static void loadintopiechart(String json, PieChart mPieChart) throws JSONException {
         final List<String> animalCategorys=new ArrayList<String>();
         ArrayList<String> months=new ArrayList<String>();
@@ -70,49 +121,89 @@ public class Charts {
 
         mPieChart.setDescription(desc);
         mPieChart.invalidate();
+}
+    public static void loadintobarchart (String json, BarChart mBarChart) throws JSONException{
+        final List<String> animalSpecies = new ArrayList<String>();
+        JSONObject object=new JSONObject(json.toString());
+        JSONArray jsonArray = object.getJSONArray("body");
 
-      /*  ArrayList<BarEntry> barentries = new ArrayList<>();
-        int barsum = 0;
-int counter=0;
+        ArrayList<BarEntry> barentries1 = new ArrayList<>();
+        ArrayList<BarEntry> barentries2 = new ArrayList<>();
+        int counter=0;
         for (int i = 0; i < jsonArray.length(); i++) {
             JSONObject obj = jsonArray.getJSONObject(i);
-            int intcategory=getCategory(obj.getString("animalCategory"));
+            String animalSpecie = obj.getString("animalSpecies");
+            int intcategory=getSpecies(obj.getString("animalSpecies"));
+            animalSpecies.add(animalSpecie);
             counter++;
-            int countbar = Integer.parseInt(obj.optString("count"));
-            barentries.add(new BarEntry((float) intcategory, countbar));
+            float pre = Float.parseFloat(obj.optString("PrefireMortalityRate"));
+            float post = Float.parseFloat(obj.optString("PostfireMortalityRate"));
+            barentries1.add(new BarEntry((float) intcategory, pre));
+            barentries2.add(new BarEntry((float) intcategory, post));
         }
-        BarDataSet bardataset = new BarDataSet(barentries, "");
-        bardataset.setColors(ColorTemplate.PASTEL_COLORS);
-        BarData bardata = new BarData(bardataset);
-        bardata.setBarWidth(0.9f);
+
+        BarDataSet bardataset1 = new BarDataSet(barentries1,"");
+        BarDataSet bardataset2 = new BarDataSet(barentries2,"");
+        bardataset1.setColors(Color.YELLOW);
+        bardataset2.setColors(Color.RED);
+        BarData bardata1 = new BarData(bardataset1);
+        BarData bardata2 = new BarData(bardataset2);
+        bardata1.setBarWidth(0.9f);
+        bardata2.setBarWidth(0.9f);
         mBarChart.setVisibility(View.VISIBLE);
         mBarChart.animateY(3000);
-        mBarChart.setData(bardata);
+        mBarChart.setData(bardata1);
+        mBarChart.setVisibility(View.VISIBLE);
+        mBarChart.animateY(3000);
+        mBarChart.setData(bardata2);
+
         XAxis xaxis = mBarChart.getXAxis();
         xaxis.setPosition(XAxis.XAxisPosition.TOP);
         xaxis.setDrawLabels(true);
-        xaxis.setDrawGridLines(false);
-        xaxis.setGranularity(1f);
-        xaxis.setValueFormatter(new IAxisValueFormatter() {
-            @Override
-            public String getFormattedValue(float value, AxisBase axis) {
-                return animalCategorys.get((int) value);
-            }
-        });
-       mBarChart.setFitBars(true);
+        xaxis.setGranularity(6f);
+        xaxis.setAxisMaximum(18f);
+        xaxis.setAxisMinimum(0f);
+        xaxis.setSpaceMax(2f);
+
+        mBarChart.setFitBars(true);
         YAxis yAxis = mBarChart.getAxisLeft();
         yAxis.setLabelCount(counter, false);
         yAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
-        yAxis.setSpaceTop(15f);
-        ;
-        yAxis.setAxisMinimum(0f);
+        yAxis.setDrawGridLines(false);
+      /*  yAxis.setValueFormatter(new IAxisValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, AxisBase axis) {
+                return animalSpecies.get((int) value);
+            }
+        });
+*/
         Description descr = new Description();
         descr.setPosition(30, 10);
-        descr.setText("Category Risk of mammals");
+        descr.setText("Pre & Post fire mortality score");
         mBarChart.setDescription(descr);
 
         mBarChart.invalidate();
-*/
+    }
+
+    //method to convert category value to int
+    private static int getSpecies(String month) {
+
+        if (month.equalsIgnoreCase("Frog"))
+            return 0;
+        else if (month.equalsIgnoreCase("Mammal"))
+            return 1;
+        else if (month.equalsIgnoreCase("Bird"))
+            return 2;
+        else if (month.equalsIgnoreCase("Reptile"))
+            return 3;
+        else if (month.equalsIgnoreCase("Insect"))
+            return 4;
+        else if (month.equalsIgnoreCase("Spider"))
+            return 5;
+        else if (month.equalsIgnoreCase("Fish"))
+            return 6;
+
+        else return 7;
 
     }
 
