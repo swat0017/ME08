@@ -3,6 +3,7 @@ package com.example.me08.adapter;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,9 +24,9 @@ public class OrganisationViewAdapter extends ArrayAdapter<Organisation> {
     ArrayList<Organisation> organisations;
     Context context;
     int resource;
-    Button viewmoreorg_button;
-    // MovieApiConnection movieApiConnection=null;
+
     Organisation organisation=null;
+    TextView name;
 
     public OrganisationViewAdapter(Context context, int resource, ArrayList<Organisation> organisations) {
         super(context, resource, organisations);
@@ -45,12 +46,17 @@ public class OrganisationViewAdapter extends ArrayAdapter<Organisation> {
         }
         organisation = getItem(position);
 
-        final TextView name = (TextView) convertView.findViewById(R.id.orgname);
-        name.setText(organisation.getName());
-        //image url from tmdb
-       // String url = "http://image.tmdb.org/t/p/w92";
-        //ImageView imageView = (ImageView) convertView.findViewById(R.id.imageViewMovie);
-        //Picasso.with(context).load(url+movie.getImage()).into(imageView);
+          name = (TextView) convertView.findViewById(R.id.orgname);
+        name.setText(organisation.getName()+","+organisation.getState()+","+organisation.getAddress());
+        //image url from api call
+         String url = organisation.getImage();
+        //String url="https://image.tmdb.org/t/p/w92/qJ2tW6WMUDux911r6m7haRef0WH.jpg";
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.imageViewOrg);
+        Picasso.with(context).setLoggingEnabled(true);
+        Picasso.with(context).load(url).resize(92,92).into(imageView);
+       Log.i("picassa","Picasso.with(context).load(url).resize(92,92).into(imageView)");
+
+
         return convertView;
     }
     @Override
