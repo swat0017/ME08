@@ -11,8 +11,18 @@
             android:title="Welcome Page" />
         <item
 
-            android:id="@+id/prelims"
-            android:title="Preliminary Findings" />
+            android:id="@+id/org"
+            android:title="Organisations List" />
+        <item
+
+            android:id="@+id/near"
+            android:title="Near Me" />
+
+
+        <item
+
+            android:id="@+id/aboutus"
+            android:title="About Us" />
 
    </group>
 
