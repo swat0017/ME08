@@ -43,7 +43,7 @@ public class BirdFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.bird_layout, container, false);
         mPieChart=(PieChart) view.findViewById(R.id.piechart);
-      //  mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
+        mBarChart=(BarChart) view.findViewById(R.id.barchart);
         networkConnection=new APIGatewayConnection();
         BirdInfo info=new BirdInfo();
         info.execute();
@@ -65,6 +65,7 @@ public class BirdFragment extends Fragment {
             } else {
                 try {
                     Charts.loadintopiechart(result,mPieChart);
+                    Charts.loadintobarchart(result,mBarChart, "Birds");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
