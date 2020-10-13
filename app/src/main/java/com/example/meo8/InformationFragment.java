@@ -21,7 +21,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class    InformationFragment extends Fragment { String compword="[]";
+public class InformationFragment extends Fragment { String compword="[]";
     View view =null;
     private PieChart mPieChart1;
 
