@@ -20,9 +20,9 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.List;
 
-class Frag3 extends androidx.fragment.app.Fragment {
+public class Frag3 extends androidx.fragment.app.Fragment {
 
-    private PieChart mPieChart;
+    private BarChart mPieChart;
 
     String compword="[]";
 
@@ -35,7 +35,7 @@ class Frag3 extends androidx.fragment.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.vulnerable_fragment, container, false);
-        mPieChart=(PieChart) view.findViewById(R.id.piechartvulnerable);
+        mPieChart=(BarChart) view.findViewById(R.id.piechartvulnerable);
         // mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
         networkConnection=new APIGatewayConnection();
        Vulnerable info=new Vulnerable();
@@ -57,7 +57,7 @@ class Frag3 extends androidx.fragment.app.Fragment {
                 Toast.makeText(getActivity().getApplicationContext(), "No info", Toast.LENGTH_LONG).show();
             } else {
                 try {
-                    Pie.loadintopiechart(result,mPieChart);
+                    Charts.loadintoBarchart(result,mPieChart);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
