@@ -19,6 +19,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.text.SimpleDateFormat;
 
+
 public class MainActivity  extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle toggle;
@@ -49,9 +50,6 @@ public class MainActivity  extends AppCompatActivity  implements NavigationView.
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         if (savedInstanceState == null) {
-
-            WelcomeFragment homeActivity=new WelcomeFragment();
-
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new WelcomeFragment()).addToBackStack(null).commit();
 
@@ -72,29 +70,31 @@ public class MainActivity  extends AppCompatActivity  implements NavigationView.
                 memoirFragment.setArguments(data);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new WelcomeFragment()).addToBackStack(null).commit();
+                break;
 
-           case R.id.prelims:
-                //watchlist fragment
-                PrelimnaryResultsFragment watchlistFragment=new PrelimnaryResultsFragment();
-                watchlistFragment.setArguments(data);
+            case R.id.org:
+                //list of movies in memoir
+                OrganisationviewFragment organisationviewFragment=new OrganisationviewFragment();
+                organisationviewFragment.setArguments(data);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new PrelimnaryResultsFragment()).addToBackStack(null).commit();
-          /*      break;
-            case R.id.report:
-                //report fragment
-                ReportFragment fragmentr=new ReportFragment();
-                fragmentr.setArguments(data);
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ReportFragment()).commit();
+                        new OrganisationviewFragment()).addToBackStack(null).commit();
                 break;
-            case R.id.map:
-                //map fragment
-                MapsActivity fragment=new MapsActivity();
-                fragment.setArguments(data);
+
+            case R.id.near:
+                //list of movies in memoir
+                MapFragment mapFragment=new MapFragment();
+                mapFragment.setArguments(data);
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        fragment).commit();
+                        new MapFragment()).addToBackStack(null).commit();
                 break;
-                */
+            case R.id.aboutus:
+                //list of movies in memoir
+                AboutUsFragment aboutUsFragment=new AboutUsFragment();
+                aboutUsFragment.setArguments(data);
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new AboutUsFragment()).addToBackStack(null).commit();
+                break;
+
 
         }
         drawerLayout.closeDrawer(GravityCompat.START);
