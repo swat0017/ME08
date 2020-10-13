@@ -22,7 +22,7 @@ import java.util.List;
 
 public class Frag1 extends androidx.fragment.app.Fragment {
 
-    private PieChart mPieChart;
+    private BarChart mBarChart;
 
     String compword="[]";
 
@@ -35,8 +35,8 @@ public class Frag1 extends androidx.fragment.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.criticallyendangered_fragment, container, false);
-        mPieChart=(PieChart) view.findViewById(R.id.piechartcritical);
-        // mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
+        //mPieChart=(BarChart) view.findViewById(R.id.piechartcritical);
+         mBarChart=(BarChart) view.findViewById(R.id.piechartcritical);
         networkConnection=new APIGatewayConnection();
         Vulnerable info=new Vulnerable();
         info.execute();
@@ -57,7 +57,7 @@ public class Frag1 extends androidx.fragment.app.Fragment {
                 Toast.makeText(getActivity().getApplicationContext(), "No info", Toast.LENGTH_LONG).show();
             } else {
                 try {
-                    Pie.loadintopiechart(result,mPieChart);
+                    Charts.loadintoBarchart(result,mBarChart);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
