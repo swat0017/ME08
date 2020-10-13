@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,7 +45,7 @@ public class HomeActivity extends AppCompatActivity {
     ArrayAdapter<String> arrayAdapter;
     ArrayAdapter<String> arrayAdapter2;
     ArrayAdapter<String> arrayAdapter3;
-
+EditText pwd;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,11 +53,21 @@ public class HomeActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_home);
         but1=(Button)findViewById(R.id.button2);
+        pwd=(EditText)findViewById(R.id.password) ;
         but1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent registerIntent = new Intent(HomeActivity.this, MainActivity.class);
-                startActivity(registerIntent);
+
+
+                String val=pwd.getText().toString().trim();
+                if(val.equals("ME08_123")) {
+                    Intent registerIntent = new Intent(HomeActivity.this, MainActivity.class);
+                    startActivity(registerIntent);
+                }
+                else
+
+                    Toast.makeText(getApplicationContext(), "Password incorrect,Please re enter", Toast.LENGTH_LONG).show();
+
 
             }});
 
