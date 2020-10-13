@@ -1,188 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:background="#DDE4E4"
-      android:layout_width="match_parent"
+    android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewpagewelcome"
+        android:layout_width="match_parent"
+        android:layout_height="367dp"
+
+        android:background="#F5FAF9" />
+
+    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+        android:id="@+id/dotswelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+
+
+        app:dotsSize="15dp"
+        app:dotsSpacing="5dp"
+        app:dotsColor="#009688"
+        app:selectedDotColor="#009688" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="20dp"
-        android:background="#DDE4E4"
-        android:orientation="horizontal">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/species1"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="150dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="12dp">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="16dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="261dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/graph" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="52dp"
-                    android:layout_marginTop="10dp"
-                    android:gravity="center_horizontal"
-                    android:text="Bushfire Risk Analysis"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="150dp"
-            android:layout_marginLeft="5dp"
-
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="68dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center_horizontal"
-                android:text="Analyse the different bushfire risk trends affecting animals "
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/buttonanalysis"
-                android:layout_width="146dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-
-                android:background="@drawable/bluebutton"
-                android:text="Explore"
-                android:textColor="#F6D39E" />
-        </LinearLayout>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:layout_marginRight="30dp"
-        android:background="#DDE4E4"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="150dp"
-            android:layout_marginLeft="15dp"
-
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="68dp"
-                android:layout_marginTop="15dp"
-                android:gravity="center_horizontal"
-
-                android:text="Find animal welfare organisation details in your state"
-                android:textAlignment="center"
-
-                android:textColor="@android:color/black"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/buttonorg"
-                android:layout_width="146dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-
-                android:background="@drawable/bluebutton"
-                android:text="Explore"
-                android:textColor="#F6D39E" />
-        </LinearLayout>
-    <androidx.cardview.widget.CardView
-        android:id="@+id/species2"
+        android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_width="0dp"
-        android:layout_gravity="right"
-        android:layout_height="150dp"
-
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginBottom="10dp"
-
-        app:cardCornerRadius="16dp"
-        app:cardElevation="12dp">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_gravity="center_horizontal"
-            android:layout_margin="16dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="261dp"
-                android:layout_height="85dp"
-                android:layout_gravity="center_horizontal"
-                android:src="@drawable/building" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="52dp"
-                android:gravity="center_horizontal"
-                android:text="Organisations"
-                android:layout_marginTop="10dp"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="18sp" />
-
-        </LinearLayout>
-
-    </androidx.cardview.widget.CardView>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="160dp"
-        android:background="#DDE4E4"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
+        android:background="@drawable/paper">
         android:orientation="horizontal">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/infocard"
-android:layout_weight="1"
+            android:id="@+id/speciesrisk"
             android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            app:cardCornerRadius="16dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
 
+
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="5dp"
+
+            app:cardCornerRadius="16dp"
+            app:cardElevation="10dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="16dp"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/analysis"
+                    android:layout_width="106dp"
+                    android:layout_height="96dp"
+                    android:src="@drawable/analysis"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="Species Risk"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/infocard"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+
+            app:cardCornerRadius="16dp"
             app:cardElevation="12dp">
 
             <LinearLayout
@@ -192,56 +91,41 @@ android:layout_weight="1"
                 android:layout_margin="16dp"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:layout_width="145dp"
-                    android:layout_height="78dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@drawable/map" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/find"
+                    android:layout_width="111dp"
+                    android:layout_height="96dp"
+                    android:src="@drawable/findings"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="2dp" />
+
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="80dp"
-
+                    android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="Near Me"
-                    android:layout_marginTop="10dp"
+                    android:text="Preliminary Findings"
                     android:textAlignment="center"
                     android:textColor="@android:color/black"
-                    android:textSize="18sp" />
+                    android:textSize="10sp" />
+
+
+
+            </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+
+        android:layout_weight="1"
+        android:background="@drawable/paper">
+
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_weight="1"
-            android:layout_marginLeft="5dp"
-            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="68dp"
-                android:layout_marginTop="15dp"
-
-                android:gravity="center_horizontal"
-                android:text="Navigate to the top 3 nearest organisations from your location"
-                android:textAlignment="center"
-                android:textColor="@android:color/black"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/buttonloc"
-                android:layout_width="146dp"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="5dp"
-
-                android:background="@drawable/bluebutton"
-                android:text="Explore"
-                android:textColor="#F6D39E" />
-        </LinearLayout>
-    </LinearLayout>
 
     </LinearLayout>
 
+</LinearLayout>

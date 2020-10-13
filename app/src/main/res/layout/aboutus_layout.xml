@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -27,7 +28,7 @@
             android:layout_marginTop="10dp"
             android:id="@+id/profile_image"
             android:background="#009688"
-            android:layout_width="400dp"
+            android:layout_width="match_parent"
             android:layout_height="155dp"
             android:src="@drawable/wildaid"
 
@@ -39,7 +40,7 @@
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
-            android:layout_height="43dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textStyle="bold"
             android:layout_marginTop="10dp"
@@ -65,7 +66,7 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="82dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
 
             android:layout_marginLeft="10dp"
@@ -76,123 +77,12 @@ Find nearby organisations that help animals,get general info like address,number
 "
             android:textColor="#009688"
             android:textSize="15dp" />
-        <TextView
+
+        <ImageView
+            android:id="@+id/imageView4"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:text="Wild Aid Team"
-            android:textColor="#009688"
-            android:textStyle="bold"
-            android:textSize="18dp"
-            android:gravity="center"/>
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/swathyprofile"
-            android:layout_width="400dp"
-            android:layout_height="108dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/swathy"
-
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#009688"
-            android:text="Name: Swathy Chandran"
-            android:layout_gravity="center"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#009688"
-            android:text="Role: Developer"
-            android:layout_gravity="center"/>
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/darsiniprofile"
-            android:layout_width="400dp"
-            android:layout_height="119dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/darsini"
-
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#009688"
-            android:text="Name: Darsini Krishna Kumar"
-            android:layout_gravity="center"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:textColor="#009688"
-            android:layout_height="wrap_content"
-            android:text="Role: Data Analyst"
-            android:layout_gravity="center"/>
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/hansiprofile"
-            android:layout_width="400dp"
-            android:layout_height="119dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/hansi"
-
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#009688"
-            android:text="Name: Hansi Song"
-            android:layout_gravity="center"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#009688"
-            android:text="Role: UI design, Business analyst"
-            android:layout_gravity="center"/>
-
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/keqinprofile"
-            android:layout_width="400dp"
-            android:layout_height="119dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/keqin"
-
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#009688"
-            android:text="Name: Keqin Hou"
-            android:layout_gravity="center"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#009688"
-            android:text="Role: Developer"
-            android:layout_gravity="center"/>
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/wentaoprofile"
-            android:layout_width="400dp"
-            android:layout_height="119dp"
-            android:layout_marginTop="10dp"
-            android:src="@drawable/wentao"
-
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#009688"
-            android:text="Name: Wentao Ye"
-            android:layout_gravity="center"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#009688"
-            android:text="Role: UI design, Business analyst"
-            android:layout_gravity="center"/>
+            android:layout_height="245dp"
+            app:srcCompat="@drawable/volunteer" />
 
 
     </LinearLayout>

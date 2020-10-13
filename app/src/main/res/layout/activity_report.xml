@@ -25,15 +25,15 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpage"
         android:layout_width="match_parent"
-        android:layout_height="520dp"
+        android:layout_height="500dp"
         android:background="#F5FAF9" />
 
     <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
         android:id="@+id/dots"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:layout_marginLeft="60dp"
+
 android:layout_centerHorizontal="true"
         app:dotsSize="15dp"
         app:dotsSpacing="5dp"

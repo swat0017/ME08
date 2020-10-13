@@ -17,19 +17,20 @@
         android:layout_height="match_parent"
 
         android:orientation="vertical">
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginTop="10dp"
+            android:id="@+id/profile_image"
+            android:layout_width="400dp"
+            android:layout_height="126dp"
+            android:src="@drawable/reptile"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp" />
 
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            app:srcCompat="@drawable/reptile" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
+            android:layout_height="wrap_content"
 
             android:gravity="center"
             android:text="Number of Reptiles identified at Risk"
@@ -41,7 +42,7 @@
             android:layout_width="300dp"
             android:layout_height="300dp"
 
-            android:layout_marginLeft="70dp"
+            android:layout_marginLeft="60dp"
             android:visibility="gone"
           />
 
