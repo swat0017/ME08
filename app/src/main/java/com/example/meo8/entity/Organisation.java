@@ -8,14 +8,14 @@ public class Organisation {
     private Integer PhoneNumber;
     private String Website;
 
-    public Organisation(String Name, String Address, String State,Integer PhoneNumber, String Website) {
+    public Organisation(String Name, String Address, String State,Integer PhoneNumber, String Website,String Image) {
         this.Name = Name;
         this.Address = Address;
         this.State = State;
         this.PhoneNumber = PhoneNumber;
         this.Website = Website;
         this.Image = Image;
-}
+    }
 
 
 
