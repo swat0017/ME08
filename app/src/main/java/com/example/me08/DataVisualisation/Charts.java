@@ -71,48 +71,7 @@ public class Charts {
         mPieChart.setDescription(desc);
         mPieChart.invalidate();
 
-      /*  ArrayList<BarEntry> barentries = new ArrayList<>();
-        int barsum = 0;
-int counter=0;
-        for (int i = 0; i < jsonArray.length(); i++) {
-            JSONObject obj = jsonArray.getJSONObject(i);
-            int intcategory=getCategory(obj.getString("animalCategory"));
-            counter++;
-            int countbar = Integer.parseInt(obj.optString("count"));
-            barentries.add(new BarEntry((float) intcategory, countbar));
-        }
-        BarDataSet bardataset = new BarDataSet(barentries, "");
-        bardataset.setColors(ColorTemplate.PASTEL_COLORS);
-        BarData bardata = new BarData(bardataset);
-        bardata.setBarWidth(0.9f);
-        mBarChart.setVisibility(View.VISIBLE);
-        mBarChart.animateY(3000);
-        mBarChart.setData(bardata);
-        XAxis xaxis = mBarChart.getXAxis();
-        xaxis.setPosition(XAxis.XAxisPosition.TOP);
-        xaxis.setDrawLabels(true);
-        xaxis.setDrawGridLines(false);
-        xaxis.setGranularity(1f);
-        xaxis.setValueFormatter(new IAxisValueFormatter() {
-            @Override
-            public String getFormattedValue(float value, AxisBase axis) {
-                return animalCategorys.get((int) value);
-            }
-        });
-       mBarChart.setFitBars(true);
-        YAxis yAxis = mBarChart.getAxisLeft();
-        yAxis.setLabelCount(counter, false);
-        yAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
-        yAxis.setSpaceTop(15f);
-        ;
-        yAxis.setAxisMinimum(0f);
-        Description descr = new Description();
-        descr.setPosition(30, 10);
-        descr.setText("Category Risk of mammals");
-        mBarChart.setDescription(descr);
 
-        mBarChart.invalidate();
-*/
 
     }
 
