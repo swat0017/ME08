@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -61,7 +62,7 @@ public class ReportFragment extends Fragment {
     CardView frog_card;
     CardView insect_card;
     CardView info_card;
-
+    private ImageView back;
     private EditText mEndDate;
 
     public ReportFragment() {
@@ -83,7 +84,16 @@ viewPager=(ViewPager)view.findViewById(R.id.viewpage);
 viewPageAdapter=new ViewPageAdapter(getChildFragmentManager());
 viewPager.setAdapter(viewPageAdapter);
 sp.setViewPager(viewPager);
+        back =view.findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                WelcomeFragment welcomeFragment=new WelcomeFragment();
 
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new WelcomeFragment()).addToBackStack(null).commit();
+            }
+        });
         return view;
     }
 

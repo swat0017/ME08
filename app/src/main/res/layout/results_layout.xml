@@ -21,14 +21,36 @@
         android:layout_weight="100"
         android:orientation="vertical">
 
-
-        <ImageView
-            android:id="@+id/imageView2"
+        <LinearLayout
             android:layout_width="match_parent"
+<<<<<<< Updated upstream
             android:layout_height="121dp"
             android:layout_marginTop="10dp"
 android:background="#F8EC8D"
             app:srcCompat="@drawable/findings" />
+=======
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="45dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/back" />
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="146dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="#048C9E"
+                app:srcCompat="@drawable/fire" />
+        </LinearLayout>
+>>>>>>> Stashed changes
 
         <TextView
             android:id="@+id/textView2"
