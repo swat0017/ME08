@@ -157,4 +157,8 @@ public class APIGatewayConnection {
         return results;
     }
 
+    public String getOrganzationResult() {
+        String str = "";
+        return str;
+    }
 }

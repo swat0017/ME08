@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Sat Aug 29 00:47:42 2020
-
 @author: pravinkumarthangavelu
 """
 import json
@@ -40,4 +39,3 @@ def lambda_handler(event,context):
   return responseObject
   
 #lambda_handler()
-  

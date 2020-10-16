@@ -29,7 +29,7 @@ import java.util.List;
 public class Charts {
 
 
-    public static void loadintopiechart(String json, PieChart mPieChart, BarChart mBarChart) throws JSONException {
+    public static void loadintopiechart(String json, PieChart mPieChart) throws JSONException {
         final List<String> animalCategorys=new ArrayList<String>();
         ArrayList<String> months=new ArrayList<String>();
         List<Integer> count=new ArrayList<Integer>();
@@ -57,7 +57,7 @@ public class Charts {
 
         mPieChart.animateXY(2000, 2000);
         PieDataSet piedataset = new PieDataSet(entries, "");
-        piedataset.setColors(ColorTemplate.PASTEL_COLORS);
+        piedataset.setColors(ColorTemplate.COLORFUL_COLORS);
         PieData piedata = new PieData(piedataset);
         piedata.setValueFormatter(new PercentFormatter());
         System.out.println(piedata);
@@ -66,12 +66,12 @@ public class Charts {
         mPieChart.setData(piedata);
         Description desc = new Description();
         desc.setText("Category Risk post Bushfire");
-        desc.setTextSize(15);
+        desc.setTextSize(7);
 
         mPieChart.setDescription(desc);
         mPieChart.invalidate();
 
-        ArrayList<BarEntry> barentries = new ArrayList<>();
+      /*  ArrayList<BarEntry> barentries = new ArrayList<>();
         int barsum = 0;
 int counter=0;
         for (int i = 0; i < jsonArray.length(); i++) {
@@ -93,12 +93,12 @@ int counter=0;
         xaxis.setDrawLabels(true);
         xaxis.setDrawGridLines(false);
         xaxis.setGranularity(1f);
-       /* xaxis.setValueFormatter(new IAxisValueFormatter() {
+        xaxis.setValueFormatter(new IAxisValueFormatter() {
             @Override
             public String getFormattedValue(float value, AxisBase axis) {
                 return animalCategorys.get((int) value);
             }
-        });*/
+        });
        mBarChart.setFitBars(true);
         YAxis yAxis = mBarChart.getAxisLeft();
         yAxis.setLabelCount(counter, false);
@@ -112,7 +112,7 @@ int counter=0;
         mBarChart.setDescription(descr);
 
         mBarChart.invalidate();
-
+*/
 
     }
 

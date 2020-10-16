@@ -43,7 +43,7 @@ public class BirdFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.bird_layout, container, false);
         mPieChart=(PieChart) view.findViewById(R.id.piechart);
-        mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
+      //  mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
         networkConnection=new APIGatewayConnection();
         BirdInfo info=new BirdInfo();
         info.execute();
@@ -64,7 +64,7 @@ public class BirdFragment extends Fragment {
                 Toast.makeText(getActivity().getApplicationContext(), "No info", Toast.LENGTH_LONG).show();
             } else {
                 try {
-                    Charts.loadintopiechart(result,mPieChart,mBarChart);
+                    Charts.loadintopiechart(result,mPieChart);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

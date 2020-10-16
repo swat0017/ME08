@@ -1,6 +1,3 @@
-
-
-
 from pandas import read_excel #importing the read_excel function from pandas package
 sheet_name1 = 'Protected Species'#sheet name of the xlsx file
 file_name1 = 'protected-species-in-fire-affected-areas-20Jan.xlsx'# the name of xlsx file
@@ -19,13 +16,3 @@ print(protected_species_df1)
 protected_species_df1.drop(protected_species_df1.loc[protected_species_df1['Type']=='Plant'].index, inplace=True)
 print(protected_species_df1)
 protected_species_df1.to_excel("Protected_species.xlsx")
-
-
-
-
-
-
-
-
-
-     

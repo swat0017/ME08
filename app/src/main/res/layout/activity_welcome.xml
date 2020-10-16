@@ -18,9 +18,9 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/species"
-            android:layout_width="193dp"
+            android:layout_width="352dp"
             android:layout_height="155dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             app:cardCornerRadius="16dp"
@@ -34,7 +34,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="144dp"
+                    android:layout_width="261dp"
                     android:layout_height="94dp"
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/icon" />
@@ -52,41 +52,7 @@
 
         </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/bird_card"
-            android:layout_width="182dp"
-            android:layout_height="155dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            app:cardCornerRadius="16dp"
-            app:cardElevation="12dp">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_margin="16dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="163dp"
-                    android:layout_height="94dp"
-                    android:layout_gravity="center_horizontal"
-                    android:src="@mipmap/analysis" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="291dp"
-                    android:gravity="center_horizontal"
-                    android:text="Post Fire Mortality"
-                    android:textAlignment="center"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
 
 
     </LinearLayout>
@@ -98,9 +64,9 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/infocard"
-            android:layout_width="182dp"
+            android:layout_width="352dp"
             android:layout_height="155dp"
-            android:layout_marginLeft="116dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="16dp"
             app:cardCornerRadius="16dp"
@@ -114,7 +80,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="146dp"
+                    android:layout_width="260dp"
                     android:layout_height="78dp"
                     android:layout_gravity="center_horizontal"
                     android:src="@drawable/info2" />

@@ -48,4 +48,3 @@ FURTHER INFORMATION
 • Bushfire recovery package for wildlife and their habitat: http://www.environment.gov.au/biodiversity/bushfire-recovery						
 • Species Profile and Threats (SPRAT) Database: https://www.environment.gov.au/cgi-bin/sprat/public/sprat.pl						
 • Species of National Environmental Significance: https://www.environment.gov.au/science/erin/databases-maps/snes");
-

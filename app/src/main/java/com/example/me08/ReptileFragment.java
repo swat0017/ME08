@@ -43,7 +43,7 @@ public class ReptileFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.reptile_layout, container, false);
         mPieChart=(PieChart) view.findViewById(R.id.piechart);
-        mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
+       // mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
         networkConnection=new APIGatewayConnection();
         ReptileInfo info=new ReptileInfo();
         info.execute();
@@ -65,7 +65,7 @@ public class ReptileFragment extends Fragment {
             } else {
                 try {
 
-                    Charts.loadintopiechart(result,mPieChart,mBarChart);
+                    Charts.loadintopiechart(result,mPieChart);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
