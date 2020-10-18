@@ -43,13 +43,15 @@ public class SpiderFragment  extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.spider_layout, container, false);
         mPieChart=(PieChart) view.findViewById(R.id.piechart);
-     //   mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
+        mBarChart=(BarChart) view.findViewById(R.id.barchart);
         networkConnection=new APIGatewayConnection();
-        SpiderInfo info=new SpiderInfo();
-        info.execute();
+        SpiderInfo1 info1=new SpiderInfo1();
+        info1.execute();
+        SpiderInfo2 info2=new SpiderInfo2();
+        info2.execute();
         return  view;
     }
-    private class SpiderInfo extends AsyncTask<String, Void, String> {
+    private class SpiderInfo1 extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             Log.i("json ", "debugging");
@@ -65,6 +67,30 @@ public class SpiderFragment  extends Fragment {
             } else {
                 try {
                     Charts.loadintopiechart(result,mPieChart);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+    }
+    private class SpiderInfo2 extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            Log.i("json ", "debugging");
+
+            return (networkConnection.getMortalityResult());
+
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            if (result.equalsIgnoreCase(compword)) {
+                Toast.makeText(getActivity().getApplicationContext(), "No info", Toast.LENGTH_LONG).show();
+            } else {
+                try {
+                    Charts.loadintobarchart(result,mBarChart,"Crayfish");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

@@ -59,13 +59,15 @@ public class MammalFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.mammal_layout, container, false);
         mPieChart=(PieChart) view.findViewById(R.id.piechart);
-        //mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
+        mBarChart=(BarChart) view.findViewById(R.id.barchart);
         networkConnection=new APIGatewayConnection();
-        MammalsInfo info=new MammalsInfo();
-        info.execute();
+        MammalsInfo1 info1=new MammalsInfo1();
+        info1.execute();
+        MammalsInfo2 info2=new MammalsInfo2();
+        info2.execute();
 return  view;
     }
-private class MammalsInfo extends AsyncTask<String, Void, String> {
+private class MammalsInfo1 extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... params) {
         Log.i("json ", "debugging");
@@ -88,4 +90,29 @@ private class MammalsInfo extends AsyncTask<String, Void, String> {
     }
 
 
-}}
+}
+    private class MammalsInfo2 extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            Log.i("json ", "debugging");
+
+            return (networkConnection.getMortalityResult());
+
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            if (result.equalsIgnoreCase(compword)) {
+                Toast.makeText(getActivity().getApplicationContext(), "No info", Toast.LENGTH_LONG).show();
+            } else {
+                try {
+                    Charts.loadintobarchart(result,mBarChart,"Mammals");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+    }
+}

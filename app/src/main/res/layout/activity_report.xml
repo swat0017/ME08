@@ -8,6 +8,7 @@
     android:orientation="vertical"
     android:fillViewport="true"
     android:gravity="center_horizontal">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,8 +34,6 @@
     </LinearLayout>
 
 
-
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpage"
         android:layout_width="match_parent"
@@ -51,7 +50,7 @@
         app:dotsSpacing="5dp"
         app:dotsColor="#009688"
         app:selectedDotColor="#009688" />
-    </LinearLayout>
+</LinearLayout>
 
 
 

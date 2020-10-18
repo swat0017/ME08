@@ -46,7 +46,9 @@
             android:visibility="gone"
            />
 
-        <com.github.mikephil.charting.charts.HorizontalBarChart
+
+        <com.github.mikephil.charting.charts.BarChart
+
             android:id="@+id/barchart"
             android:layout_width="300dp"
             android:layout_height="300dp"

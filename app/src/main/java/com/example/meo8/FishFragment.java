@@ -42,13 +42,15 @@ public class FishFragment extends Fragment { private Button mbuttonpiechart;
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fish_layout, container, false);
         mPieChart=(PieChart) view.findViewById(R.id.piechart);
-       // mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
+        mBarChart=(BarChart) view.findViewById(R.id.barchart);
         networkConnection=new APIGatewayConnection();
-        FishInfo info=new FishInfo();
-        info.execute();
+        FishInfo1 info1=new FishInfo1();
+        info1.execute();
+        FishInfo2 info2=new FishInfo2();
+        info2.execute();
         return  view;
     }
-    private class FishInfo extends AsyncTask<String, Void, String> {
+    private class FishInfo1 extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             Log.i("json ", "debugging");
@@ -64,6 +66,30 @@ public class FishFragment extends Fragment { private Button mbuttonpiechart;
             } else {
                 try {
                     Charts.loadintopiechart(result,mPieChart);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+    }
+    private class FishInfo2 extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            Log.i("json ", "debugging");
+
+            return (networkConnection.getMortalityResult());
+
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            if (result.equalsIgnoreCase(compword)) {
+                Toast.makeText(getActivity().getApplicationContext(), "No info", Toast.LENGTH_LONG).show();
+            } else {
+                try {
+                    Charts.loadintobarchart(result,mBarChart,"Fish");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

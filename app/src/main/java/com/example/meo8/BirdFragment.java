@@ -45,11 +45,13 @@ public class BirdFragment extends Fragment {
         mPieChart=(PieChart) view.findViewById(R.id.piechart);
         mBarChart=(BarChart) view.findViewById(R.id.barchart);
         networkConnection=new APIGatewayConnection();
-        BirdInfo info=new BirdInfo();
-        info.execute();
+        BirdInfo1 info1=new BirdInfo1();
+        info1.execute();
+        BirdInfo2 info2=new BirdInfo2();
+        info2.execute();
         return  view;
     }
-    private class BirdInfo extends AsyncTask<String, Void, String> {
+    private class BirdInfo1 extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             Log.i("json ", "debugging");
@@ -66,6 +68,30 @@ public class BirdFragment extends Fragment {
                 try {
                     Charts.loadintopiechart(result,mPieChart);
                     Charts.loadintobarchart(result,mBarChart, "Birds");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+    }
+    private class BirdInfo2 extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            Log.i("json ", "debugging");
+
+            return (networkConnection.getMortalityResult());
+
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            if (result.equalsIgnoreCase(compword)) {
+                Toast.makeText(getActivity().getApplicationContext(), "No info", Toast.LENGTH_LONG).show();
+            } else {
+                try {
+                    Charts.loadintobarchart(result,mBarChart,"Birds");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

@@ -63,7 +63,7 @@ public class MortalityFragment extends Fragment {
                 Toast.makeText(getActivity().getApplicationContext(), "No info", Toast.LENGTH_LONG).show();
             } else {
                 try {
-                    com.example.me08.DataVisualisation.Charts.loadintobarchart(result, mBarChart);
+                    com.example.me08.DataVisualisation.Charts.loadintoBarchart(result, mBarChart);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

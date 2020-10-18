@@ -43,13 +43,15 @@ public class ReptileFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.reptile_layout, container, false);
         mPieChart=(PieChart) view.findViewById(R.id.piechart);
-       // mBarChart=(BarChart) view.findViewById(R.id.barchartsec);
+        mBarChart=(BarChart) view.findViewById(R.id.barchart);
         networkConnection=new APIGatewayConnection();
-        ReptileInfo info=new ReptileInfo();
-        info.execute();
+        ReptileInfo1 info1=new ReptileInfo1();
+        info1.execute();
+        ReptileInfo2 info2=new ReptileInfo2();
+        info2.execute();
         return  view;
     }
-    private class ReptileInfo extends AsyncTask<String, Void, String> {
+    private class ReptileInfo1 extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... params) {
             Log.i("json ", "debugging");
@@ -74,4 +76,29 @@ public class ReptileFragment extends Fragment {
 
 
     }
+    private class ReptileInfo2 extends AsyncTask<String, Void, String> {
+        @Override
+        protected String doInBackground(String... params) {
+            Log.i("json ", "debugging");
+
+            return (networkConnection.getMortalityResult());
+
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            if (result.equalsIgnoreCase(compword)) {
+                Toast.makeText(getActivity().getApplicationContext(), "No info", Toast.LENGTH_LONG).show();
+            } else {
+                try {
+                    Charts.loadintobarchart(result,mBarChart,"Reptiles");
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+
+    }
 }
+
