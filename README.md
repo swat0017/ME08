@@ -1,4 +1,10 @@
-# ME08
+TEAM ME08 (TECHFORTUNES)
+
+ANDROID APPLICATION NAME : WILDAID
+
+
+
+
 FIT5120-IE Project
 This is the code repository for Monash students team ME08 that is developing an android application to assess the risks caused to animals by bushfire and the the ways in which people who want to volunteer and contribute can help them.Our team name is TECHFORTUNES and our app name is WILDAID
 The architecture used is MYSQL database stored in AWS RDS instance,queried using lambda functions and API gateway 
