@@ -17,7 +17,7 @@ To run the application,you can either
 2.Use an emulator like appetize.io
 3.Or pull the code to your local environment and import it in Android studio and run the app to test the application using android emulator
 
-Instruction on importing and running the application
+INSTRUCTION ON IMPORTING AND RUNNING THE APPLICATION:
 
 To run the app on an emulator as follows:
 
@@ -32,7 +32,7 @@ From the target device drop-down menu, select the AVD that you want to run your 
 4. Android Studio installs the app on the AVD and starts the emulator. You now see "Hello, World!" displayed in the app.
 
 
-Integration of our application with Amazon Web Services:
+INTEGRATION OF OUR APPLICATION WITH AMAZON WEB SERVICES:
 
 Aws rds endpoint- mydatabase-1.cj1vq2k4dclz.us-east-1.rds.amazonaws.com
 Steps-Log in to AWS console->Services->Search for Lambda->Create function->function name,choose python script->upload python script zip file->Test lambda
@@ -46,7 +46,7 @@ All methods accessing AWS api gateway are written here with base url as https://
 
 Please refer to this link for more information : https://docs.aws.amazon.com/lambda/latest/dg/with-android-example.html
 
-Intergation of our application with IBM Watson Assistant:
+INTEGRATION OF OUR APPLICATION WITH IBM WATSON ASSISTANT:
 
 We have created a service with IBM cloud for IBM Watson assistant.
 We are using IBM Watson assistant for our application's chatbot feature.
@@ -67,7 +67,7 @@ For more information on running android studio with IBM watson assistance
 https://developer.ibm.com/recipes/tutorials/making-an-android-mobile-app-that-uses-the-ibm-watson-conversation-service-as-a-chatbot/
 https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-android-watson-chatbot
 
-Images used for our application :
+IMAGES USED FOR OUR APPLICATION
 
 Images are stored in S3 Bucket and the URL is saved in database tables which is accessed via the API gateway
 All the images are taken from pixabay free license
