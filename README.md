@@ -7,6 +7,9 @@ This is the code repository for Monash students team ME08 that is developing an 
 The architecture used is MYSQL database stored in AWS RDS instance,queried using lambda functions and API gateway 
 Android Studio is used for developing the application
 
+![system arch-updated](https://user-images.githubusercontent.com/70090040/97425345-1daa7100-1966-11eb-8bfb-5004c5b80ad5.jpeg)
+
+
 TECH STACK DETAILS-
 
 Java is the main language used in developing our application.The application interacts with the database through AWS.A lambda function is created in AWS using Python script.
@@ -64,8 +67,8 @@ To Run the android application with IBM cloud assistance,
 8. Copy the url value.
 
 For more information on running android studio with IBM watson assistance
-https://developer.ibm.com/recipes/tutorials/making-an-android-mobile-app-that-uses-the-ibm-watson-conversation-service-as-a-chatbot/
-https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-android-watson-chatbot
+1. https://developer.ibm.com/recipes/tutorials/making-an-android-mobile-app-that-uses-the-ibm-watson-conversation-service-as-a-chatbot/
+2. https://cloud.ibm.com/docs/solution-tutorials?topic=solution-tutorials-android-watson-chatbot
 
 IMAGES USED FOR OUR APPLICATION
 
