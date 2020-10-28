@@ -13,7 +13,16 @@ Android Studio is used for developing the application
 TECH STACK DETAILS-
 
 Java is the main language used in developing our application.The application interacts with the database through AWS.A lambda function is created in AWS using Python script.
-AWS RDS instance Steps--Log in to AWS console->Services->Search for RDS->Create Database->Choose options Standard create,Mysql,Free tier,set DB name and password,Default VPC and default settings.Once the RDS instance is created,you can connect to the instance from your local system using MYSQL workbench
+AWS RDS instance Steps--
+a. Log in to AWS console  
+
+b. Select Services
+
+c. Search for RDS
+
+d. Select Create Database
+
+e. Choose options Standard create,Mysql,Free tier,set DB name and password,Default VPC and default settings.Once the RDS instance is created,you can connect to the instance from your local system using MYSQL workbench
 
 To run the application,you can either 
 1.Download the apk file situated in the apk folder and run it in your android phone 
@@ -38,13 +47,63 @@ From the target device drop-down menu, select the AVD that you want to run your 
 INTEGRATION OF OUR APPLICATION WITH AMAZON WEB SERVICES:
 
 Aws rds endpoint- mydatabase-1.cj1vq2k4dclz.us-east-1.rds.amazonaws.com
-Steps-Log in to AWS console->Services->Search for Lambda->Create function->function name,choose python script->upload python script zip file->Test lambda
+Steps-
+a. Log in to AWS console
+
+b. Services
+
+c. Search for Lambda
+
+d. Create function
+
+e. function name,choose python script
+
+f. upload python script zip file
+
+g. Test lambda
+
 For each individual query a seperate lambda function is created and API gateway is integrated to a lambda function for API access from outside
 
 Steps for creating API gateway-once the lambda function is created and tested successfully,we can expose it via an api gateway for external access.
-AWS console->Services->Search for API Gateway->Create API->REST API build-> API name->create resource->Create method->GET-> Select integration type lambda and map lambda function-DEPLOY API ->Stage dev
+a. AWS console 
+
+b. Services
+
+c. Search for API Gateway
+
+d. Create API
+
+e. REST API build
+
+f. API name
+
+g. create resource
+
+h. Create method
+
+i. GET
+
+j. Select integration type lambda and map lambda function
+
+k. DEPLOY API ->Stage dev
+
 Once the API is deployed successfully you can access the resource from outside to get the JSON response
-This URL is integrated in the java side app->src->main->java->com->example->me08->networkconnection->APIGatewayConnection.java
+This URL is integrated in the java side app
+->src
+
+->main
+
+->java
+
+->com
+
+->example
+
+->me08
+
+->networkconnection
+
+->APIGatewayConnection.java
 All methods accessing AWS api gateway are written here with base url as https://4jv3dcocbj.execute-api.us-east-1.amazonaws.com/dev/
 
 Please refer to this link for more information : https://docs.aws.amazon.com/lambda/latest/dg/with-android-example.html
